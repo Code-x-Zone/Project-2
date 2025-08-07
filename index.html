@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stylish Clothes Shop - Trendy Clothes Online</title>
+    <meta name="description" content="Shop trendy clothes online with exclusive offers. Stylish T-shirts, jackets, jeans, and more. Discover your style with Clothify." />
+    <meta name="keywords" content="clothes, fashion, shopping, trendy clothes, online shopping, jackets, jeans, t-shirts" />
+    <meta name="author" content="Clothify" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Clothify</div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#login" id="loginBtn">Login</a></li>
+                    <li><a href="#register" id="registerBtn">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Discover Your Style</h1>
+            <p>Trendy clothes with exclusive offers just for you</p>
+            <a href="#products" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="../image/Classic T-shirt.jpg" alt="Classic T-shirt" />
+                <h3>Classic T-shirt</h3>
+                <p>$19.99</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="../image/Denim Jacket.jpg" alt="Denim Jacket" />
+                <h3>Denim Jacket</h3>
+                <p>$49.99</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="../image/jeans.jfif" alt="Jeans" />
+                <h3>Blue Jeans</h3>
+                <p>$39.99</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="../image/shirt.jfif" alt="Shirt" />
+                <h3>Casual Shirt</h3>
+                <p>$29.99</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Clothify. All rights reserved.</p>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeLogin">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="loginEmail">Email:</label>
+                <input type="email" id="loginEmail" name="loginEmail" required />
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" name="loginPassword" required />
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeRegister">&times;</span>
+            <h2>Register</h2>
+            <form id="registerForm">
+                <label for="registerName">Name:</label>
+                <input type="text" id="registerName" name="registerName" required />
+                <label for="registerEmail">Email:</label>
+                <input type="email" id="registerEmail" name="registerEmail" required />
+                <label for="registerPassword">Password:</label>
+                <input type="password" id="registerPassword" name="registerPassword" required />
+                <button type="submit" class="btn">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Modal handling
+        const loginBtn = document.getElementById('loginBtn');
+        const registerBtn = document.getElementById('registerBtn');
+        const loginModal = document.getElementById('loginModal');
+        const registerModal = document.getElementById('registerModal');
+        const closeLogin = document.getElementById('closeLogin');
+        const closeRegister = document.getElementById('closeRegister');
+
+        loginBtn.onclick = () => {
+            loginModal.style.display = 'block';
+        };
+        registerBtn.onclick = () => {
+            registerModal.style.display = 'block';
+        };
+        closeLogin.onclick = () => {
+            loginModal.style.display = 'none';
+        };
+        closeRegister.onclick = () => {
+            registerModal.style.display = 'none';
+        };
+        window.onclick = (event) => {
+            if (event.target === loginModal) {
+                loginModal.style.display = 'none';
+            }
+            if (event.target === registerModal) {
+                registerModal.style.display = 'none';
+            }
+        };
+
+        // Form submission handlers (dummy)
+        document.getElementById('loginForm').onsubmit = (e) => {
+            e.preventDefault();
+            alert('Login form submitted!');
+            loginModal.style.display = 'none';
+        };
+        document.getElementById('registerForm').onsubmit = (e) => {
+            e.preventDefault();
+            alert('Registration form submitted!');
+            registerModal.style.display = 'none';
+        };
+    </script>
+</body>
+</html>
